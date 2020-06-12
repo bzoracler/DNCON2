@@ -128,7 +128,7 @@ The script ‘predict-rr-from-features.sh’ takes a feature file as input and p
 cd ~/DNCON2/
 ./DNCON2/scripts/predict-rr-from-features.sh ./DNCON2/dry-run/output/3e7u-2017-Oct-23/feat-3e7u.txt ./test-dncon2/3e7u.rr ./test-dncon2/feat-stg2.txt
 ```
-Verify that the contents of your output file ‘3e7u.rr’ matches the contents of ‘~/DNCON2/dry-run/output/3e7u/3e7u.dncon2.rr’.
+Verify that the contents of your output file ‘3e7u.rr’ matches the contents of ‘~/DNCON2/dry-run/output/3e7u-2017-Oct-23/3e7u.dncon2.rr’.
 
 **(E) Install Legacy Blast, PSIPRED, and runpsipredandsolv (MetaPSICOV)**  
 
