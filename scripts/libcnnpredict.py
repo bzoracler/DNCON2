@@ -151,7 +151,7 @@ def get_x_from_this_file(feature_file):
 	return X
 
 def prediction2rr(P, fileRR):
-	print 'Writing RR file ' + fileRR
+	print('Writing RR file ' + fileRR)
 	L  = int(math.sqrt(len(P)))
 	PM = P.reshape(L, L)
 	rr = open(fileRR, 'w')
