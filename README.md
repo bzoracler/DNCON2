@@ -126,7 +126,7 @@ sudo pip install python-h5py
 The script ‘predict-rr-from-features.sh’ takes a feature file as input and predicts contacts using the trained CNN models. Using an existing feature file (feat-3e7u.txt) and a name for output RR file and intermediate stage2 feature file, test the installation of Tensorflow, Keras, and hp5y using the following command:
 ```
 cd ~/DNCON2/
-./DNCON2/scripts/predict-rr-from-features.sh ./DNCON2/dry-run/output/3e7u/feat-3e7u.txt ./test-dncon2/3e7u.rr ./test-dncon2/feat-stg2.txt
+./DNCON2/scripts/predict-rr-from-features.sh ./DNCON2/dry-run/output/3e7u-2017-Oct-23/feat-3e7u.txt ./test-dncon2/3e7u.rr ./test-dncon2/feat-stg2.txt
 ```
 Verify that the contents of your output file ‘3e7u.rr’ matches the contents of ‘~/DNCON2/dry-run/output/3e7u/3e7u.dncon2.rr’.
 
