@@ -207,6 +207,7 @@ tar zxvf hmmer-3.1b2-linux-intel-x86_64.tar.gz
 cd hmmer-3.1b2-linux-intel-x86_64
 ./configure
 make
+sudo make install
 ```
 ```
 sudo apt-get install csh
