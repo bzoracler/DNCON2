@@ -140,14 +140,14 @@ tar zxvf psipred3.5.tar.gz
 ```
 (b) Install Legacy Blast
 ```
-wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-x64-linux.tar.gz
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
 tar zxvf blast-2.2.26-x64-linux.tar.gz
 ```
 (c) Install MetaPSICOV
 ```
 mkdir ~/DNCON2/metapsicov
 cd  ~/DNCON2/metapsicov/
-wget http://bioinfadmin.cs.ucl.ac.uk/downloads/MetaPSICOV/metapsicov.tar.gz
+wget http://bioinfadmin.cs.ucl.ac.uk/downloads/MetaPSICOV/old/v1/metapsicov.tar.gz
 tar zxvf metapsicov.tar.gz
 cd src
 make
