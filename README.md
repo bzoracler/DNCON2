@@ -207,7 +207,6 @@ tar zxvf hmmer-3.1b2-linux-intel-x86_64.tar.gz
 cd hmmer-3.1b2-linux-intel-x86_64
 ./configure
 make
-sudo make install
 ```
 ```
 sudo apt-get install csh
@@ -234,7 +233,7 @@ NPROC     => 8
 
 (b) Update the following variables in the script 'generate-alignments.pl' 
 ```
-JACKHMMER   => '/home/badri/DNCON2/hmmer-3.1b2-linux-intel-x86_64/binaries/jackhmmer',
+JACKHMMER   => '/usr/local/src/hmmer-3.1b2-linux-intel-x86_64/src/jackhmmer',
 REFORMAT    => abs_path(dirname($0)).'/reformat.pl',
 JACKHMMERDB => '/home/badri/DNCON2/databases/uniref/uniref90pfilt',
 HHBLITS     => '/usr/bin/hhblits',
