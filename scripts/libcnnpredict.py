@@ -167,8 +167,8 @@ def make_ensemble_prediction(weight_arch_dict, X):
 	L = len(X[0, :, 0, 0])
 	P = np.zeros((N, int(L * L)))
 	for weight in weight_arch_dict.keys():
-		print ''
-		print 'Running prediction using ' + weight + ' and ' + weight_arch_dict[weight]
+		print('')
+		print('Running prediction using ' + weight + ' and ' + weight_arch_dict[weight])
 		P0 = make_prediction(read_model_arch(weight_arch_dict[weight]), weight, X)
 		for i in range (0, len(P0[:, 0])):
 			P[i] = P[i] + P0[i]
