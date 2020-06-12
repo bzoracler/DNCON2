@@ -129,7 +129,7 @@ def make_prediction(model_arch, file_weights, X):
 	return P
 
 def print_feature_summary(X):
-	print 'FeatID         Avg        Med        Max        Sum        Avg[30]    Med[30]    Max[30]    Sum[30]'
+	print('FeatID         Avg        Med        Max        Sum        Avg[30]    Med[30]    Max[30]    Sum[30]')
 	for ii in range(0, len(X[0, 0, 0, :])):
 		(m,s,a,d) = (X[0, :, :, ii].flatten().max(), X[0, :, :, ii].flatten().sum(), X[0, :, :, ii].flatten().mean(), np.median(X[0, :, :, ii].flatten()))
 		(m30,s30,a30, d30) = (X[0, 30, :, ii].flatten().max(), X[0, 30, :, ii].flatten().sum(), X[0, 30, :, ii].flatten().mean(), np.median(X[0, 30, :, ii].flatten()))
