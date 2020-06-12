@@ -107,7 +107,7 @@ sudo pip install keras
 ```
 (c) Install the h5py library:  
 ```
-sudo pip install python-h5py
+sudo pip install h5py
 ```
 
 (d) Add the entry [“image_dim_ordering": "tf”,] to your keras..json file at ~/.keras/keras.json. Note that if you have not tried to run Keras before, you have have to execute the Tensorflow verification step once so that your keras.json file is created. After the update, your keras.json should look like the one below:  
