@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# Badri Adhikari, 6-15-2017
 # Subroutines for prediction
 
 from keras.models import Sequential
@@ -104,7 +102,7 @@ def getX(feature_file, l_max):
 def build_model_for_this_input_shape(model_arch, X):
 	model = Sequential()
 	for layer in range(1, 1000):
-		if not model_arch.has_key('layer' + str(layer)):
+		if not (('layer' + str(layer)) in model_arch):
 			break
 		parameters = model_arch['layer' + str(layer)]
 		cols = parameters.split()
