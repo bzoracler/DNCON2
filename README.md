@@ -23,6 +23,7 @@ Installation Notes
 - Since these installation steps are for a 64-bit machine, for installing some of the programs, your links may be different. Please refer to appropriate third-party websites.
 - For verifying your installation, use the results in the scripts and outputs in the dry-run directory. In the dry-run directory we provide input, output, and log files of DNCON2 execution for three sequences - 3e7u, T0866, and T0900.
 - It is possible that your installation results have slightly different confidence values. We noticed that the programs PSICOV, CCMpred, and FreeContact can produce slightly different results based on the machine architecture, availability/absence of GPU, etc.
+- Avoid using pre-built binaries, as sometimes they are remnants of uncleaned directories and may in fact be outdated versions of the software that the compiling code actually builds.
 
 Data Flow
 --------------------------------------------------------------------------------------
