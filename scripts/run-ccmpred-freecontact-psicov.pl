@@ -12,8 +12,8 @@ use Time::Piece;
 ####################################################################################################
 use constant{
 	FREECONTACT=> '/usr/bin/freecontact',
-	PSICOV    => '/home/badri/psicov/psicov',
-	CCMPRED   => '/home/badri/CCMpred/bin/ccmpred',
+	PSICOV    => '/usr/local/bin/PSICOV2/psicov',
+	CCMPRED   => '/usr/local/bin/ccmpred',
 	HOURLIMIT => 24,
 	NPROC     => 8
 };
