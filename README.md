@@ -188,9 +188,9 @@ wget http://download.igb.uci.edu/SCRATCH-1D_1.1.tar.gz
 tar zxvf SCRATCH-1D_1.1.tar.gz
 cd SCRATCH-1D_1.1/
 perl install.pl
-// Replace the 32-bit blast with 64-bit version (if needed)
+// Replace the 32-bit blast with 64-bit version (if needed) by creating symbolic link to 64-bit version
 mv ./pkg/blast-2.2.26 ./pkg/blast-2.2.26.original
-cp -r ~/blast-2.2.26 ./pkg/ (64-bit Legacy Blast is already installed)
+ln -s ~/blast-2.2.26 ./pkg/ (64-bit Legacy Blast is already installed)
 ```
 
 **[OPTIONAL] Verify SCRATCH installation**  
