@@ -23,6 +23,7 @@ Installation Notes
 - Since these installation steps are for a 64-bit machine, for installing some of the programs, your links may be different. Please refer to appropriate third-party websites.
 - For verifying your installation, use the results in the scripts and outputs in the dry-run directory. In the dry-run directory we provide input, output, and log files of DNCON2 execution for three sequences - 3e7u, T0866, and T0900.
 - It is possible that your installation results have slightly different confidence values. We noticed that the programs PSICOV, CCMpred, and FreeContact can produce slightly different results based on the machine architecture, availability/absence of GPU, etc.
+- Avoid using pre-built binaries, as sometimes they are remnants of uncleaned directories and may in fact be outdated versions of the software that the compiling code actually builds.
 
 Data Flow
 --------------------------------------------------------------------------------------
@@ -107,7 +108,7 @@ sudo pip install keras
 ```
 (c) Install the h5py library:  
 ```
-sudo pip install python-h5py
+sudo pip install h5py
 ```
 
 (d) Add the entry [“image_dim_ordering": "tf”,] to your keras..json file at ~/.keras/keras.json. Note that if you have not tried to run Keras before, you have have to execute the Tensorflow verification step once so that your keras.json file is created. After the update, your keras.json should look like the one below:  
@@ -128,26 +129,29 @@ The script ‘predict-rr-from-features.sh’ takes a feature file as input and p
 cd ~/DNCON2/
 ./DNCON2/scripts/predict-rr-from-features.sh ./DNCON2/dry-run/output/3e7u-2017-Oct-23/feat-3e7u.txt ./test-dncon2/3e7u.rr ./test-dncon2/feat-stg2.txt
 ```
-Verify that the contents of your output file ‘3e7u.rr’ matches the contents of ‘~/DNCON2/dry-run/output/3e7u/3e7u.dncon2.rr’.
+Verify that the contents of your output file ‘3e7u.rr’ matches the contents of ‘~/DNCON2/dry-run/output/3e7u-2017-Oct-23/3e7u.dncon2.rr’.
 
 **(E) Install Legacy Blast, PSIPRED, and runpsipredandsolv (MetaPSICOV)**  
 
-(a) Install PSIPRED
+(a) Install PSIPRED. Do not use the pre-built binaries in psipred3.5/bin, they're actually from psipred3.4.
 ```
 cd ~/DNCON2/
 wget http://bioinfadmin.cs.ucl.ac.uk/downloads/psipred/old_versions/psipred3.5.tar.gz
 tar zxvf psipred3.5.tar.gz
+cd psipred3.5/src
+make
+make install
 ```
 (b) Install Legacy Blast
 ```
-wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-x64-linux.tar.gz
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
 tar zxvf blast-2.2.26-x64-linux.tar.gz
 ```
 (c) Install MetaPSICOV
 ```
 mkdir ~/DNCON2/metapsicov
 cd  ~/DNCON2/metapsicov/
-wget http://bioinfadmin.cs.ucl.ac.uk/downloads/MetaPSICOV/metapsicov.tar.gz
+wget http://bioinfadmin.cs.ucl.ac.uk/downloads/MetaPSICOV/old/v1/metapsicov.tar.gz
 tar zxvf metapsicov.tar.gz
 cd src
 make
@@ -184,9 +188,9 @@ wget http://download.igb.uci.edu/SCRATCH-1D_1.1.tar.gz
 tar zxvf SCRATCH-1D_1.1.tar.gz
 cd SCRATCH-1D_1.1/
 perl install.pl
-// Replace the 32-bit blast with 64-bit version (if needed)
+// Replace the 32-bit blast with 64-bit version (if needed) by creating symbolic link to 64-bit version
 mv ./pkg/blast-2.2.26 ./pkg/blast-2.2.26.original
-cp -r ~/blast-2.2.26 ./pkg/ (64-bit Legacy Blast is already installed)
+ln -s ~/blast-2.2.26 ./pkg/ (64-bit Legacy Blast is already installed)
 ```
 
 **[OPTIONAL] Verify SCRATCH installation**  
@@ -233,7 +237,7 @@ NPROC     => 8
 
 (b) Update the following variables in the script 'generate-alignments.pl' 
 ```
-JACKHMMER   => '/home/badri/DNCON2/hmmer-3.1b2-linux-intel-x86_64/binaries/jackhmmer',
+JACKHMMER   => '/usr/local/src/hmmer-3.1b2-linux-intel-x86_64/src/jackhmmer',
 REFORMAT    => abs_path(dirname($0)).'/reformat.pl',
 JACKHMMERDB => '/home/badri/DNCON2/databases/uniref/uniref90pfilt',
 HHBLITS     => '/usr/bin/hhblits',
