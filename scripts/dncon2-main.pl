@@ -40,11 +40,11 @@ if (not $outdir){
 
 ####################################################################################################
 use constant{
-	SCRATCH      => '/home/badri/SCRATCH-1D_1.1/bin/run_SCRATCH-1D_predictors.sh',
-	BLASTPATH    => '/home/badri/ncbi-blast-2.2.25+/bin', 
-	BLASTNRDB    => '/home/badri/databases/nr90-2012',
-	PSIPRED      => '/home/badri/metapsicov/runpsipredandsolv',
-	ALNSTAT      => '/home/badri/metapsicov/bin/alnstats',
+	SCRATCH      => '/usr/local/bin/SCRATCH-1D_1.1/run_SCRATCH-1D_predictors.sh',
+	BLASTPATH    => '/opt/ncbi-blast-2.2.25+/bin', 
+	BLASTNRDB    => '/media/' . $ENV{"USER"} . '/Data/OurData/nr90-2012',
+	PSIPRED      => '/usr/local/src/metapsicov-1/runpsipredandsolv-DNCON2',
+	ALNSTAT      => '/usr/local/bin/metapsicov-1/alnstats',
 	FEAT2RR      => abs_path(dirname($0)).'/predict-rr-from-features.sh',
 	ALNSCRIPT    => abs_path(dirname($0)).'/generate-alignments.pl',
 	ALNSCRIPT_NOVEL    => abs_path(dirname($0)).'/generate-alignments_novel.pl',

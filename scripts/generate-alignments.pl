@@ -8,11 +8,11 @@ use Cwd 'abs_path';
 use File::Basename;
 
 use constant{
-	JACKHMMER   => '/home/badri/hmmer-3.1b2-linux-intel-x86_64/binaries/jackhmmer',
+	JACKHMMER   => '/usr/local/src/hmmer-3.1b2-linux-intel-x86_64/src/jackhmmer',
 	REFORMAT    => abs_path(dirname($0)).'/reformat.pl',
-	JACKHMMERDB => '/home/badri/databases/uniref/uniref90pfilt',
+	JACKHMMERDB => '/media/' . $ENV{"USER"} . '/Data/OurData/uniref/uniref90pfilt',
 	HHBLITS     => '/usr/bin/hhblits',
-	HHBLITSDB   => '/home/badri/databases/uniprot20_2016_02/uniprot20_2016_02',
+	HHBLITSDB   => '/media/' . $ENV{"USER"} . '/Data/OurData/uniprot20_2016_02/uniprot20_2016_02',
 	CPU         => 2
 };
 
