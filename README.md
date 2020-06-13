@@ -202,7 +202,12 @@ cd doc
 
 **(G) Install HHblits and JackHMMER**  
 ```
-sudo apt install hhsuite
+# apt install hhsuite does not give a functional copy, tested using Ubuntu 19.10. Building from source works
+# For updated instructions see https://github.com/soedinglab/hh-suite
+git clone https://github.com/soedinglab/hh-suite.git
+mkdir -p hh-suite/build && cd hh-suite/build
+cmake -DCMAKE_INSTALL_PREFIX=. ..
+make -j 4 && make install
 ```
 ```
 cd ~/DNCON2/
