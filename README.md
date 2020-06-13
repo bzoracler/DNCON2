@@ -132,11 +132,14 @@ Verify that the contents of your output file ‘3e7u.rr’ matches the contents 
 
 **(E) Install Legacy Blast, PSIPRED, and runpsipredandsolv (MetaPSICOV)**  
 
-(a) Install PSIPRED
+(a) Install PSIPRED. Do not use the pre-built binaries in psipred3.5/bin, they're actually from psipred3.4.
 ```
 cd ~/DNCON2/
 wget http://bioinfadmin.cs.ucl.ac.uk/downloads/psipred/old_versions/psipred3.5.tar.gz
 tar zxvf psipred3.5.tar.gz
+cd psipred3.5/src
+make
+make install
 ```
 (b) Install Legacy Blast
 ```
